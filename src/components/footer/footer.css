@@ -1,0 +1,11 @@
+.login-page__footer {
+  --footer-border: var(--border);
+  --footer-text: var(--muted-foreground);
+
+  border-top-color: var(--footer-border);
+  color: var(--footer-text);
+}
+
+.login-page__footer-inner {
+  color: var(--footer-text);
+}

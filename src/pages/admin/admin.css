@@ -1,0 +1,254 @@
+.admin-page {
+  --admin-background: var(--background);
+  --admin-border: var(--border);
+  --admin-card: var(--card);
+  --admin-foreground: var(--foreground);
+  --admin-muted: var(--muted-foreground);
+
+  background: var(--admin-background);
+  color: var(--admin-foreground);
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px 32px;
+}
+
+.admin-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(1120px, calc(100vw - 32px));
+}
+
+.admin-page__heading {
+  align-items: end;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.admin-page__heading-actions,
+.admin-page__row-actions,
+.admin-page__form-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.admin-page__title {
+  color: var(--admin-foreground);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  margin: 0 0 8px;
+}
+
+.admin-page__subtitle,
+.admin-page__state,
+.admin-page__result {
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.admin-page__subtitle {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.admin-page__summary {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-page__metric,
+.admin-page__table-panel,
+.admin-page__config-panel {
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 2px;
+}
+
+.admin-page__metric {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.admin-page__metric span,
+.admin-page__field span,
+.admin-page__config-field span {
+  color: var(--admin-muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.admin-page__metric strong {
+  color: var(--admin-foreground);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  overflow-wrap: anywhere;
+}
+
+.admin-page__toolbar {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(240px, 1fr) auto;
+}
+
+.admin-page__status-filter {
+  min-width: 168px;
+}
+
+.admin-page__table-scroll {
+  overflow-x: auto;
+}
+
+.admin-page__table {
+  border-collapse: collapse;
+  min-width: 960px;
+  width: 100%;
+}
+
+.admin-page__table th,
+.admin-page__table td {
+  border-bottom: 1px solid var(--admin-border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.admin-page__table th {
+  color: var(--admin-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.admin-page__table td {
+  color: var(--admin-foreground);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.admin-page__table td:first-child {
+  display: grid;
+  gap: 2px;
+}
+
+.admin-page__table td:first-child span {
+  color: var(--admin-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.admin-page__state {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  min-height: 180px;
+  padding: 24px;
+}
+
+.admin-page__config-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-page__config-panel {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.admin-page__section-title {
+  align-items: center;
+  color: var(--admin-foreground);
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 8px;
+  line-height: 22px;
+}
+
+.admin-page__field-list {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-page__field,
+.admin-page__config-field {
+  border: 1px solid var(--admin-border);
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px;
+}
+
+.admin-page__field strong,
+.admin-page__config-field strong {
+  color: var(--admin-foreground);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.admin-page__config-field input {
+  background: transparent;
+  border: 1px solid var(--admin-border);
+  color: var(--admin-foreground);
+  height: 32px;
+  padding: 0 10px;
+}
+
+.admin-page__config-select {
+  width: 100%;
+}
+
+.admin-page__config-switch {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  min-height: 32px;
+}
+
+@media (max-width: 900px) {
+  .admin-page__summary,
+  .admin-page__config-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page__heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-page__heading-actions,
+  .admin-page__row-actions,
+  .admin-page__form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-page__toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page__heading-actions > button,
+  .admin-page__row-actions > button,
+  .admin-page__form-actions > button {
+    width: 100%;
+  }
+
+  .admin-page__status-filter {
+    width: 100%;
+  }
+}

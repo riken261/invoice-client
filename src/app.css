@@ -1,0 +1,49 @@
+.app-root,
+.app-root *,
+.app-root *::before,
+.app-root *::after {
+  box-sizing: border-box;
+}
+
+.app-root {
+  --app-header-height: 70px;
+
+  background: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  padding-top: var(--app-header-height);
+}
+
+.app-root > .header {
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  border-top: 0;
+  box-sizing: border-box;
+  left: 0;
+  min-height: var(--app-header-height);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.app-content {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+.app-page-back {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 28px;
+}
+
+.app-content > .login-page,
+.app-content > .dashboard-page {
+  flex: 1 0 auto;
+  min-height: auto;
+}
